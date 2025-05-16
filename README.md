@@ -40,7 +40,58 @@ A simple full-stack Employee Management application built with **FastAPI** (back
 
 2. Create and activate a virtual environment:
 
-   ```bash
    python -m venv venv
    source venv/bin/activate   # Linux/macOS
    venv\Scripts\activate      # Windows
+
+3. Install dependencies:
+
+pip install fastapi uvicorn sqlalchemy mysql-connector-python
+
+4. Configure your MySQL connection in database.py:
+
+DATABASE_URL = "mysql+mysqlconnector://username:password@localhost/employees"
+
+
+5. Start the backend server:
+uvicorn main:app --reload
+
+
+Frontend Setup
+Navigate to the frontend folder.
+
+Install dependencies:
+npm install
+
+Run the frontend development server:
+npm run dev
+Open http://localhost:3000 in your browser.
+
+API Endpoints
+
+| Method | Endpoint          | Description           |
+| ------ | ----------------- | --------------------- |
+| POST   | `/employees/`     | Create new employee   |
+| GET    | `/employees/`     | Get all employees     |
+| PUT    | `/employees/{id}` | Update employee by ID |
+| DELETE | `/employees/{id}` | Delete employee by ID |
+
+
+Postman Test Cases
+You can use Postman to test all CRUD operations as follows:
+
+| Operation         | Method | URL               | Body (JSON)                                     | Expected Response                       |
+| ----------------- | ------ | ----------------- | ----------------------------------------------- | --------------------------------------- |
+| Create Employee   | POST   | `/employees/`     | `{ "name": "Alice", "location": "NY" }`         | Employee object with id, name, location |
+| Get All Employees | GET    | `/employees/`     | None                                            | Array of employee objects               |
+| Update Employee   | PUT    | `/employees/{id}` | `{ "name": "Alice Updated", "location": "SF" }` | Updated employee object                 |
+| Delete Employee   | DELETE | `/employees/{id}` | None                                            | `{ "detail": "Deleted" }`               |
+
+
+Future Improvements
+Add user authentication and authorization.
+
+Implement frontend form validation and notifications.
+Add pagination and search/filter capabilities.
+Dockerize backend and frontend for easy deployment.
+Add unit and integration tests.
