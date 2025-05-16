@@ -1,0 +1,10 @@
+CREATE DATABASE employee;
+USE employee;
+
+CREATE TABLE employee (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    location VARCHAR(100)
+);
+
+SELECT * FROM employee
