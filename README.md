@@ -92,6 +92,9 @@ Future Improvements
 Add user authentication and authorization.
 
 Implement frontend form validation and notifications.
+
 Add pagination and search/filter capabilities.
+
 Dockerize backend and frontend for easy deployment.
+
 Add unit and integration tests.
