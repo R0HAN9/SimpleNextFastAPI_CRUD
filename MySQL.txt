@@ -7,4 +7,5 @@ CREATE TABLE employee (
     location VARCHAR(100)
 );
 
+
 SELECT * FROM employee
