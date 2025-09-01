@@ -9,10 +9,3 @@ CREATE TABLE employee (
 
 
 SELECT * FROM employee
-
-
-
-
-
-
-
